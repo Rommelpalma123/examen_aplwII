@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
+mongo = "mongodb+srv://rommel123:Aries2017@cluster0.asmcj.mongodb.net/chat?retryWrites=true&w=majority";
 const path = require('path')
 const morgan = require('morgan');
 const express = require('express');
-const { MONGO_URL } = require('./database/config');
 const routes = require('./routes/home');
 const app = express();
 
@@ -18,13 +18,9 @@ app.use('/', routes);
 
 // mongoose
 
-mongoose.connect('mongodb://localhost:27017/test')
-.then(db => console.log('conectado'))
-.catch(err => console.log(err)); 
-
-/*mongoose.connect(MONGO_URL,{ useNewUrlParser: true, useUnifiedTopology: true},)
+mongoose.connect(mongo,{ useNewUrlParser: true, useUnifiedTopology: true},)
 .then(()  => console.log('Connected to database mongodb'))
-.catch(e  => console.log('error connect to database',e));   */
+.catch(e  => console.log('error connect to database',e));  
 
 
 

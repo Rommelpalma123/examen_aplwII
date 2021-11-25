@@ -4,20 +4,12 @@ const mongoose = require('mongoose');
 const schemaProductos = new Schema(
 
     {
-
-        title: String,
-        description: String,
-        status:{
-            type: Boolean,
-            default: false,
-        }
-        /*codigo: String,
+        codigo: String,
         cliente: String,
         detalle: String,
         subtotal: String,
         iva: String,
-        total: String*/
-
+        total: String
     });
 
 module.exports = mongoose.model("Productos", schemaProductos)

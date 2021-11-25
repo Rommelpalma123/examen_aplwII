@@ -5,7 +5,7 @@ const productos = require('../models/inicial')
 router.get('/',async (req, res) => 
 {
     const product = await productos.find()
-    res.render('index', { product});
+    res.render('index', { product, producto:('encontrado')});
 });
 
 
